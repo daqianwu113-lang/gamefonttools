@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" data-locale="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      data-i18n-attr="content:meta.description"
+      content="Create Roblox-style text, copy fancy fonts, preview Roblox Studio fonts, and generate Lua or rich text code for game UI."
+    />
+    <link rel="alternate" hreflang="en" href="?lang=en" />
+    <link rel="alternate" hreflang="zh-CN" href="?lang=zh-CN" />
+    <link rel="alternate" hreflang="x-default" href="?lang=en" />
+    <link rel="canonical" href="https://gamefonttools.com/" />
+    <title>Roblox Fonts Generator - Copy Text & Studio Font Code</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Site navigation">
+        <a class="brand" href="#generator" aria-label="Roblox Fonts Generator home" data-i18n-attr="aria-label:brand.homeLabel">
+          <div class="brand-mark">R</div>
+          <div>
+            <strong data-i18n="brand.name">Roblox Fonts</strong>
+            <span data-i18n="brand.tagline">Text and Studio code</span>
+          </div>
+        </a>
+
+        <nav class="nav-list" aria-label="Primary" data-i18n-attr="aria-label:nav.aria">
+          <a class="nav-item active" href="#generator" data-nav-target="generator">
+            <span class="icon" aria-hidden="true">Aa</span>
+            <span data-i18n="nav.generator">Generator</span>
+          </a>
+          <a class="nav-item" href="#studio-fonts" data-nav-target="studio-fonts">
+            <span class="icon" aria-hidden="true">{ }</span>
+            <span data-i18n="nav.studio">Studio Fonts</span>
+          </a>
+          <a class="nav-item" href="#font-guide" data-nav-target="font-guide">
+            <span class="icon" aria-hidden="true">?</span>
+            <span data-i18n="nav.guide">Font Guide</span>
+          </a>
+          <a class="nav-item" href="#faq" data-nav-target="faq">
+            <span class="icon" aria-hidden="true">i</span>
+            <span data-i18n="nav.faq">FAQ</span>
+          </a>
+        </nav>
+
+        <div class="language-panel">
+          <label for="language-select" data-i18n="language.label">Language</label>
+          <select id="language-select" aria-label="Language" data-i18n-attr="aria-label:language.label">
+            <option value="en">English</option>
+            <option value="zh-CN">简体中文</option>
+          </select>
+        </div>
+
+        <div class="usage-panel">
+          <div>
+            <span class="panel-label" data-i18n="sidebar.focusLabel">MVP focus</span>
+            <strong data-i18n="sidebar.focusTitle">Copy-paste + Studio helper</strong>
+          </div>
+          <p data-i18n="sidebar.focusBody">
+            Unicode styles are for bios and display text. Studio fonts generate usable Roblox UI code.
+          </p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="hero" id="generator">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Roblox fonts generator</p>
+            <h1 data-i18n="hero.title">Create Roblox-style text and Studio font code</h1>
+            <p data-i18n="hero.body">
+              Type once, copy fancy text for Roblox bios or generate Lua snippets for TextLabel,
+              TextButton, and rich text UI.
+            </p>
+            <div class="hero-actions" aria-label="Quick examples" data-i18n-attr="aria-label:hero.examplesLabel">
+              <button class="chip active" type="button" data-sample="Shadow Obby">Shadow Obby</button>
+              <button class="chip" type="button" data-sample="Galaxy Tycoon">Galaxy Tycoon</button>
+              <button class="chip" type="button" data-sample="VIP Game Pass">VIP Game Pass</button>
+            </div>
+          </div>
+
+          <section class="tool-panel" aria-label="Roblox fonts input" data-i18n-attr="aria-label:tool.aria">
+            <label for="text-input" data-i18n="tool.inputLabel">Enter your Roblox text</label>
+            <div class="input-row">
+              <input id="text-input" type="text" value="Shadow Obby" autocomplete="off" />
+              <button class="secondary" type="button" id="clear-input" data-i18n="tool.clear">Clear</button>
+            </div>
+            <div class="controls-grid">
+              <label>
+                <span data-i18n="tool.resultType">Result type</span>
+                <select id="mode-select">
+                  <option value="all" data-i18n="filters.all">All styles</option>
+                  <option value="safe" data-i18n="filters.safe">More compatible</option>
+                  <option value="display" data-i18n="filters.display">Display names and bios</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="tool.studioFont">Studio font</span>
+                <select id="font-select"></select>
+              </label>
+            </div>
+          </section>
+        </section>
+
+        <section class="workspace-grid" aria-label="Generated output" data-i18n-attr="aria-label:results.aria">
+          <section class="panel result-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow" data-i18n="results.eyebrow">Copy-paste text</p>
+                <h2 data-i18n="results.title">Fancy Roblox text</h2>
+              </div>
+              <span class="status-pill" id="style-count">0 styles</span>
+            </div>
+            <div class="tabs" role="tablist" aria-label="Result filters" data-i18n-attr="aria-label:results.filtersLabel">
+              <button class="tab active" type="button" data-filter="all" data-i18n="tabs.all">All</button>
+              <button class="tab" type="button" data-filter="safe" data-i18n="tabs.safe">Compatible</button>
+              <button class="tab" type="button" data-filter="display" data-i18n="tabs.display">Display</button>
+            </div>
+            <div class="font-results" id="font-results" aria-live="polite"></div>
+          </section>
+
+          <section class="panel studio-panel" id="studio-fonts">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow" data-i18n="studio.eyebrow">Roblox Studio</p>
+                <h2 data-i18n="studio.title">Font preview and Lua code</h2>
+              </div>
+              <button class="secondary" type="button" id="copy-code" data-i18n="studio.copyCode">Copy code</button>
+            </div>
+            <div class="studio-preview">
+              <span data-i18n="studio.selectedFont">Selected font</span>
+              <strong id="studio-font-name">Builder Sans</strong>
+              <p id="studio-preview-text">Shadow Obby</p>
+            </div>
+            <div class="font-picker" id="font-picker" aria-label="Roblox Studio font options" data-i18n-attr="aria-label:studio.fontOptionsLabel"></div>
+            <div class="code-switch">
+              <button class="tab active" type="button" data-code-mode="lua">Lua</button>
+              <button class="tab" type="button" data-code-mode="rich" data-i18n="studio.richText">Rich text</button>
+            </div>
+            <pre class="code-box"><code id="code-output"></code></pre>
+          </section>
+        </section>
+
+        <section class="content-grid" id="font-guide">
+          <article class="info-panel">
+            <p class="eyebrow" data-i18n="guide.eyebrow">What are Roblox fonts?</p>
+            <h2 data-i18n="guide.title">Roblox fonts can mean three different things</h2>
+            <p data-i18n="guide.copyPaste">
+              Copy-paste Roblox fonts are usually Unicode characters that look styled. They can work
+              in bios, profile text, and some display surfaces, but they are not real font files.
+            </p>
+            <p data-i18n="guide.studio">
+              Roblox Studio fonts are the families available to UI objects like TextLabel,
+              TextButton, and TextBox. Use FontFace or rich text tags when building game UI.
+            </p>
+            <p data-i18n="guide.brand">
+              The Roblox brand and logo style is a separate topic. This MVP avoids font downloads
+              and focuses on text generation plus Studio-safe code.
+            </p>
+          </article>
+
+          <article class="info-panel">
+            <p class="eyebrow" data-i18n="seo.eyebrow">Page strategy</p>
+            <h2 data-i18n="seo.title">SEO pages this MVP supports</h2>
+            <ul class="keyword-list">
+              <li>Roblox fonts generator</li>
+              <li>Roblox font copy paste</li>
+              <li>Roblox Studio fonts</li>
+              <li>Roblox rich text generator</li>
+              <li>What font does Roblox use?</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="faq-section" id="faq">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+              <h2 data-i18n="faq.title">Common Roblox font questions</h2>
+            </div>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary data-i18n="faq.username.q">Can I use these fonts in my Roblox username?</summary>
+              <p data-i18n="faq.username.a">
+                Some Unicode characters may not be accepted in usernames. Use them mainly for bios,
+                display text, group descriptions, or content outside strict username fields.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq.work.q">Why do some Roblox fonts not work?</summary>
+              <p data-i18n="faq.work.a">
+                Copy-paste styles depend on Unicode support and Roblox field rules. Studio fonts are
+                more predictable because they use official UI font families.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq.studio.q">How do I change fonts in Roblox Studio?</summary>
+              <p data-i18n="faq.studio.a">
+                Select a UI object such as TextLabel, then set FontFace in properties or paste the
+                generated Lua code into a LocalScript.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq.official.q">Are these official Roblox fonts?</summary>
+              <p data-i18n="faq.official.a">
+                The Studio font list mirrors common Roblox UI font names. Fancy copy-paste styles are
+                Unicode transformations and are not official Roblox font files.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <p data-i18n="footer.disclaimer">
+            This site is not affiliated with Roblox Corporation. Roblox is a trademark of Roblox
+            Corporation.
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
