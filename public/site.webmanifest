@@ -1,0 +1,15 @@
+{
+  "name": "Game Font Tools",
+  "short_name": "Game Fonts",
+  "icons": [
+    {
+      "src": "/public/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#14181d",
+  "background_color": "#f3f5f7",
+  "display": "standalone"
+}

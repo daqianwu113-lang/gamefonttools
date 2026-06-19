@@ -3,6 +3,7 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Robots-Tag: index, follow
 
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
@@ -13,3 +14,8 @@
 /styles.css
   Cache-Control: public, max-age=3600
 
+/seo-pages.js
+  Cache-Control: public, max-age=3600
+
+/public/*
+  Cache-Control: public, max-age=86400

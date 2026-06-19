@@ -17,8 +17,20 @@ const publicFiles = [
   "index.html",
   "styles.css",
   "script.js",
+  "seo-pages.js",
   "robots.txt",
   "sitemap.xml",
+  "public/favicon.svg",
+  "public/site.webmanifest",
+  "roblox-fonts/index.html",
+  "roblox-fonts-generator/index.html",
+  "roblox-font-copy-paste/index.html",
+  "roblox-studio-fonts/index.html",
+  "roblox-rich-text-generator/index.html",
+  "what-font-does-roblox-use/index.html",
+  "about/index.html",
+  "privacy-policy/index.html",
+  "terms-of-service/index.html",
 ];
 
 const contentTypes = {
@@ -27,6 +39,8 @@ const contentTypes = {
   ".js": "application/javascript; charset=utf-8",
   ".txt": "text/plain; charset=utf-8",
   ".xml": "application/xml; charset=utf-8",
+  ".svg": "image/svg+xml",
+  ".webmanifest": "application/manifest+json; charset=utf-8",
 };
 
 function hashAsset(filePath) {

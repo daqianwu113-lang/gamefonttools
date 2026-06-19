@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn Roblox Studio fonts for TextLabel, TextButton, TextBox, FontFace, and Lua UI code with official Roblox documentation references." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://gamefonttools.com/roblox-studio-fonts/" />
+    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/public/site.webmanifest" />
+    <meta name="theme-color" content="#14181d" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G0WJ9WEG4P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G0WJ9WEG4P');
+    </script>
+
+    <title>Roblox Studio Fonts - FontFace, TextLabel, and Lua Examples</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I change fonts in Roblox Studio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Select a UI text object such as TextLabel or TextButton, then set its font properties in Studio or assign FontFace in Lua."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Roblox Studio fonts the same as copy-paste fonts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Studio fonts are UI font families used by Roblox experiences. Copy-paste fonts are Unicode characters used as styled text."
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                      {
+                              "@type": "ListItem",
+                              "position": 1,
+                              "name": "Home",
+                              "item": "https://gamefonttools.com/"
+                      },
+                      {
+                              "@type": "ListItem",
+                              "position": 2,
+                              "name": "Roblox Fonts",
+                              "item": "https://gamefonttools.com/roblox-fonts/"
+                      },
+                      {
+                              "@type": "ListItem",
+                              "position": 3,
+                              "name": "Studio Fonts",
+                              "item": "https://gamefonttools.com/roblox-studio-fonts/"
+                      }
+              ]
+      }
+    </script>
+
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../"><div class="brand-mark">R</div><div><strong>Roblox Fonts</strong><span>Text and Studio code</span></div></a>
+        <nav class="nav-list" aria-label="Roblox fonts pages">
+          <a class="nav-item" href="../roblox-fonts/"><span class="icon">Aa</span><span>Roblox Fonts</span></a>
+          <a class="nav-item" href="../roblox-fonts-generator/"><span class="icon">G</span><span>Generator</span></a>
+          <a class="nav-item" href="../roblox-font-copy-paste/"><span class="icon">C</span><span>Copy Paste</span></a>
+          <a class="nav-item active" href="./"><span class="icon">{ }</span><span>Studio Fonts</span></a>
+          <a class="nav-item" href="../roblox-rich-text-generator/"><span class="icon">T</span><span>Rich Text</span></a>
+        </nav>
+        <div class="usage-panel"><div><span class="panel-label">Creator intent</span><strong>Studio-safe code</strong></div><p>Focused on Roblox UI fonts, FontFace, and TextLabel implementation.</p></div>
+      </aside>
+
+      <main class="main seo-layout">
+        <section class="seo-hero">
+          <article class="seo-card">
+            <div class="breadcrumb"><a href="../">Home</a><span>/</span><a href="../roblox-fonts/">Roblox Fonts</a><span>/</span><span>Studio Fonts</span></div>
+            <p class="eyebrow">Roblox Studio fonts</p>
+            <h1>Roblox Studio Fonts</h1>
+            <p>
+              Roblox Studio fonts are the practical choice for interface text inside a Roblox
+              experience. Use them for TextLabel, TextButton, TextBox, menus, shop UI, game pass
+              cards, tutorial prompts, and leaderboard labels.
+            </p>
+            <div class="quick-links">
+              <a href="../#studio-fonts">Preview Studio fonts</a>
+              <a href="../roblox-rich-text-generator/">Generate RichText</a>
+            </div>
+          </article>
+          <aside class="mini-tool">
+            <p class="eyebrow">Lua example</p>
+            <pre class="code-box"><code>local textLabel = script.Parent
+
+textLabel.Text = "Galaxy Tycoon"
+textLabel.FontFace = Font.fromName("BuilderSans")
+textLabel.TextScaled = true</code></pre>
+          </aside>
+        </section>
+
+        <section class="example-grid">
+          <article class="example-card"><h2>Builder Sans</h2><p>A strong default for clean Roblox UI text, readable menus, and modern game panels.</p></article>
+          <article class="example-card"><h2>Bangers</h2><p>A louder display style for game titles, reward popups, and playful event banners.</p></article>
+          <article class="example-card"><h2>Code</h2><p>A monospace-style option for terminal panels, debug-style UI, and sci-fi screens.</p></article>
+        </section>
+
+        <section class="text-columns">
+          <article class="info-panel">
+            <p class="eyebrow">Implementation</p>
+            <h2>Use Studio fonts for real UI</h2>
+            <p>Unlike copy-paste Unicode text, Studio fonts are controlled by UI properties and scripts. That makes them better for responsive sizing, localization, and consistent in-game readability.</p>
+            <p>Our homepage generator outputs a FontFace snippet that you can adapt for TextLabel, TextButton, or TextBox.</p>
+          </article>
+          <article class="info-panel">
+            <p class="eyebrow">Design note</p>
+            <h2>Match font to UI purpose</h2>
+            <p>Use readable fonts for instructions and purchases. Reserve loud display fonts for short titles. Long text should keep high contrast and avoid decorative styles that slow players down.</p>
+          </article>
+        </section>
+
+        <section class="seo-section">
+          <div class="source-grid">
+            <article class="source-card"><h3>TextLabel</h3><p>Official class reference for a common Roblox UI text object.</p><a href="https://create.roblox.com/docs/reference/engine/classes/TextLabel" rel="nofollow">Roblox TextLabel docs</a></article>
+            <article class="source-card"><h3>Font</h3><p>Official enum reference for Roblox font options.</p><a href="https://create.roblox.com/docs/reference/engine/enums/Font" rel="nofollow">Roblox Font docs</a></article>
+            <article class="source-card"><h3>Rich Text</h3><p>Official guide for inline formatting inside supported text objects.</p><a href="https://create.roblox.com/docs/ui/rich-text" rel="nofollow">Roblox Rich Text docs</a></article>
+          </div>
+        </section>
+
+        <section class="faq-section"><div class="faq-list">
+          <details open><summary>Which Roblox Studio font should I use?</summary><p>Start with Builder Sans or Source Sans for general UI. Try display fonts only for short, high-impact labels.</p></details>
+          <details><summary>Can Studio fonts be used with RichText?</summary><p>Yes, RichText can format supported text with tags. Check the official Rich Text docs for supported tags and behavior.</p></details>
+        </div></section>
+        <footer class="footer">
+          <p>
+            <a href="../roblox-fonts/">Roblox Fonts</a> ·
+            <a href="../roblox-fonts-generator/">Generator</a> ·
+            <a href="../roblox-studio-fonts/">Studio Fonts</a> ·
+            <a href="../about/">About</a> ·
+            <a href="../privacy-policy/">Privacy Policy</a> ·
+            <a href="../terms-of-service/">Terms of Service</a>
+          </p>
+          <p>This site is not affiliated with Roblox Corporation. Roblox is a trademark of Roblox Corporation.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
