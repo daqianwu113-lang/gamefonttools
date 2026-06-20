@@ -27,10 +27,18 @@ const messages = {
     },
     nav: {
       aria: "Primary",
+      toolsLabel: "Tools",
+      guidesLabel: "Guides",
+      siteLabel: "Site",
       generator: "Generator",
       studio: "Studio Fonts",
+      richText: "Rich Text",
       guide: "Font Guide",
+      robloxFonts: "Roblox Fonts",
+      copyPaste: "Copy Paste",
+      fontQuestion: "What font?",
       faq: "FAQ",
+      about: "About",
     },
     language: {
       label: "Language",
@@ -50,6 +58,7 @@ const messages = {
     },
     tool: {
       aria: "Roblox fonts input",
+      workspaceAria: "Roblox fonts generator workspace",
       inputLabel: "Enter your Roblox text",
       clear: "Clear",
       resultType: "Result type",
@@ -150,10 +159,18 @@ const messages = {
     },
     nav: {
       aria: "主导航",
+      toolsLabel: "工具",
+      guidesLabel: "指南",
+      siteLabel: "站点",
       generator: "生成器",
       studio: "Studio 字体",
+      richText: "富文本",
       guide: "字体指南",
+      robloxFonts: "Roblox 字体",
+      copyPaste: "复制字体",
+      fontQuestion: "字体来源",
       faq: "常见问题",
+      about: "关于我们",
     },
     language: {
       label: "语言",
@@ -172,6 +189,7 @@ const messages = {
     },
     tool: {
       aria: "Roblox 字体输入",
+      workspaceAria: "Roblox 字体生成器工作区",
       inputLabel: "输入你的 Roblox 文本",
       clear: "清空",
       resultType: "结果类型",

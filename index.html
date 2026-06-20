@@ -53,23 +53,48 @@
           </div>
         </a>
 
-        <nav class="nav-list" aria-label="Primary" data-i18n-attr="aria-label:nav.aria">
-          <a class="nav-item active" href="#generator" data-nav-target="generator">
-            <span class="icon" aria-hidden="true">Aa</span>
-            <span data-i18n="nav.generator">Generator</span>
-          </a>
-          <a class="nav-item" href="#studio-fonts" data-nav-target="studio-fonts">
-            <span class="icon" aria-hidden="true">{ }</span>
-            <span data-i18n="nav.studio">Studio Fonts</span>
-          </a>
-          <a class="nav-item" href="#font-guide" data-nav-target="font-guide">
-            <span class="icon" aria-hidden="true">?</span>
-            <span data-i18n="nav.guide">Font Guide</span>
-          </a>
-          <a class="nav-item" href="#faq" data-nav-target="faq">
-            <span class="icon" aria-hidden="true">i</span>
-            <span data-i18n="nav.faq">FAQ</span>
-          </a>
+        <nav class="nav-groups" aria-label="Primary" data-i18n-attr="aria-label:nav.aria">
+          <div class="nav-group">
+            <span class="nav-group-label" data-i18n="nav.toolsLabel">Tools</span>
+            <a class="nav-item active" href="#generator" data-nav-target="generator">
+              <span class="icon" aria-hidden="true">Aa</span>
+              <span data-i18n="nav.generator">Generator</span>
+            </a>
+            <a class="nav-item" href="#studio-fonts" data-nav-target="studio-fonts">
+              <span class="icon" aria-hidden="true">{ }</span>
+              <span data-i18n="nav.studio">Studio Fonts</span>
+            </a>
+            <a class="nav-item" href="./roblox-rich-text-generator/">
+              <span class="icon" aria-hidden="true">T</span>
+              <span data-i18n="nav.richText">Rich Text</span>
+            </a>
+          </div>
+          <div class="nav-group">
+            <span class="nav-group-label" data-i18n="nav.guidesLabel">Guides</span>
+            <a class="nav-item" href="./roblox-fonts/">
+              <span class="icon" aria-hidden="true">?</span>
+              <span data-i18n="nav.robloxFonts">Roblox Fonts</span>
+            </a>
+            <a class="nav-item" href="./roblox-font-copy-paste/">
+              <span class="icon" aria-hidden="true">C</span>
+              <span data-i18n="nav.copyPaste">Copy Paste</span>
+            </a>
+            <a class="nav-item" href="./what-font-does-roblox-use/">
+              <span class="icon" aria-hidden="true">i</span>
+              <span data-i18n="nav.fontQuestion">What font?</span>
+            </a>
+          </div>
+          <div class="nav-group">
+            <span class="nav-group-label" data-i18n="nav.siteLabel">Site</span>
+            <a class="nav-item" href="#faq" data-nav-target="faq">
+              <span class="icon" aria-hidden="true">F</span>
+              <span data-i18n="nav.faq">FAQ</span>
+            </a>
+            <a class="nav-item" href="./about/">
+              <span class="icon" aria-hidden="true">A</span>
+              <span data-i18n="nav.about">About</span>
+            </a>
+          </div>
         </nav>
 
         <div class="language-panel">
@@ -92,52 +117,51 @@
       </aside>
 
       <main class="main">
-        <section class="hero" id="generator">
-          <div class="hero-copy">
+        <section class="intro-strip" id="generator">
+          <div class="intro-copy">
             <p class="eyebrow" data-i18n="hero.eyebrow">Roblox fonts generator</p>
             <h1 data-i18n="hero.title">Create Roblox-style text and Studio font code</h1>
             <p data-i18n="hero.body">
               Type once, copy fancy text for Roblox bios or generate Lua snippets for TextLabel,
               TextButton, and rich text UI.
             </p>
-            <div class="hero-actions" aria-label="Quick examples" data-i18n-attr="aria-label:hero.examplesLabel">
-              <button class="chip active" type="button" data-sample="Shadow Obby">Shadow Obby</button>
-              <button class="chip" type="button" data-sample="Galaxy Tycoon">Galaxy Tycoon</button>
-              <button class="chip" type="button" data-sample="VIP Game Pass">VIP Game Pass</button>
-            </div>
           </div>
-
-          <section class="tool-panel" aria-label="Roblox fonts input" data-i18n-attr="aria-label:tool.aria">
-            <label for="text-input" data-i18n="tool.inputLabel">Enter your Roblox text</label>
-            <div class="input-row">
-              <input id="text-input" type="text" value="Shadow Obby" autocomplete="off" />
-              <button class="secondary" type="button" id="clear-input" data-i18n="tool.clear">Clear</button>
-            </div>
-            <div class="controls-grid">
-              <label>
-                <span data-i18n="tool.resultType">Result type</span>
-                <select id="mode-select">
-                  <option value="all" data-i18n="filters.all">All styles</option>
-                  <option value="safe" data-i18n="filters.safe">More compatible</option>
-                  <option value="display" data-i18n="filters.display">Display names and bios</option>
-                </select>
-              </label>
-              <label>
-                <span data-i18n="tool.studioFont">Studio font</span>
-                <select id="font-select"></select>
-              </label>
-            </div>
-          </section>
+          <div class="hero-actions" aria-label="Quick examples" data-i18n-attr="aria-label:hero.examplesLabel">
+            <button class="chip active" type="button" data-sample="Shadow Obby">Shadow Obby</button>
+            <button class="chip" type="button" data-sample="Galaxy Tycoon">Galaxy Tycoon</button>
+            <button class="chip" type="button" data-sample="VIP Game Pass">VIP Game Pass</button>
+          </div>
         </section>
 
-        <section class="workspace-grid" aria-label="Generated output" data-i18n-attr="aria-label:results.aria">
-          <section class="panel result-panel">
+        <section class="tool-workspace" aria-label="Roblox fonts generator workspace" data-i18n-attr="aria-label:tool.workspaceAria">
+          <section class="panel generator-panel" aria-label="Roblox fonts input and results" data-i18n-attr="aria-label:tool.aria">
             <div class="panel-head">
               <div>
                 <p class="eyebrow" data-i18n="results.eyebrow">Copy-paste text</p>
                 <h2 data-i18n="results.title">Fancy Roblox text</h2>
               </div>
               <span class="status-pill" id="style-count">0 styles</span>
+            </div>
+            <div class="tool-panel inline-tool-panel">
+              <label for="text-input" data-i18n="tool.inputLabel">Enter your Roblox text</label>
+              <div class="input-row">
+                <input id="text-input" type="text" value="Shadow Obby" autocomplete="off" />
+                <button class="secondary" type="button" id="clear-input" data-i18n="tool.clear">Clear</button>
+              </div>
+              <div class="controls-grid compact-controls">
+                <label>
+                  <span data-i18n="tool.resultType">Result type</span>
+                  <select id="mode-select">
+                    <option value="all" data-i18n="filters.all">All styles</option>
+                    <option value="safe" data-i18n="filters.safe">More compatible</option>
+                    <option value="display" data-i18n="filters.display">Display names and bios</option>
+                  </select>
+                </label>
+                <label>
+                  <span data-i18n="tool.studioFont">Studio font</span>
+                  <select id="font-select"></select>
+                </label>
+              </div>
             </div>
             <div class="tabs" role="tablist" aria-label="Result filters" data-i18n-attr="aria-label:results.filtersLabel">
               <button class="tab active" type="button" data-filter="all" data-i18n="tabs.all">All</button>
@@ -147,7 +171,7 @@
             <div class="font-results" id="font-results" aria-live="polite"></div>
           </section>
 
-          <section class="panel studio-panel" id="studio-fonts">
+          <aside class="panel studio-panel sticky-studio" id="studio-fonts">
             <div class="panel-head">
               <div>
                 <p class="eyebrow" data-i18n="studio.eyebrow">Roblox Studio</p>
@@ -166,7 +190,7 @@
               <button class="tab" type="button" data-code-mode="rich" data-i18n="studio.richText">Rich text</button>
             </div>
             <pre class="code-box"><code id="code-output"></code></pre>
-          </section>
+          </aside>
         </section>
 
         <section class="content-grid" id="font-guide">
